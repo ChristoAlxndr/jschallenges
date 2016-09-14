@@ -30,7 +30,11 @@
 
 var numShots = 0;
 var numGoals = 0;
+var numShotsTeamTwo = 0;
+var numGoalsTeamTwo = 0;
 var randomNumber = 0;
+var randomNumberTeamTwo = 0;
+var numreset = 0;
 
 $(function(){
     $("#teamone-shoot").click(function(){
@@ -50,9 +54,7 @@ $(function(){
 })
 
 
-var numShotsTeamTwo = 0;
-var numGoalsTeamTwo = 0;
-var randomNumberTeamTwo = 0;
+
 
 $(function(){
     $("#teamtwo-shoot").click(function(){
@@ -73,16 +75,15 @@ $(function(){
 
 
 $("#reset").click(function(){
-	numreset = 0;
-    numShotsTwo = 0;
-    numShotsOne = 0;
-    numGoalsOne = 0;
-    numGoalsTwo = 0;
+	numShotsTeamTwo = 0;
+    numShots = 0;
+    numGoals = 0;
+    numGoalsTeamTwo = 0;
     numreset++;
-    $("#teamtwo-numshots").html(numShotsTwo);
-    $("#teamtwo-numhits").html(numGoalsTwo);
-    $("#teamone-numhits").html(numGoalsOne);
-    $("#teamone-numshots").html(numShotsOne);
+    $("#teamtwo-numshots").html(numShotsTeamTwo);
+    $("#teamtwo-numhits").html(numGoalsTeamTwo);
+    $("#teamone-numhits").html(numGoals);
+    $("#teamone-numshots").html(numShots);
     $("#num-resets").html(numreset);
     $("html").css("background-color", "white");
 
