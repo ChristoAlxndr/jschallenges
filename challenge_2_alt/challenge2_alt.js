@@ -28,8 +28,62 @@
  *   and how to use it in JS. You will also need to download a sound bite
  */
 
- $(function(){
+var numShots = 0;
+var numGoals = 0;
+var randomNumber = 0;
+
+$(function(){
+    $("#teamone-shoot").click(function(){
+        randomNumber = Math.floor((Math.random() * 11) + 1);
+        
+       if (randomNumber == 10){
+           numShots++;
+           $("#teamone-numshots").html(numShots);
+           numGoals++;
+           $("#teamone-numhits").html(numGoals);
+           $("html").css("background-color", "red");
+       }else{
+           numShots++;
+           $("#teamone-numshots").html(numShots);
+       };
+   });
+})
 
 
+var numShotsTeamTwo = 0;
+var numGoalsTeamTwo = 0;
+var randomNumberTeamTwo = 0;
 
- })
+$(function(){
+    $("#teamtwo-shoot").click(function(){
+        randomNumberTeamTwo = Math.floor((Math.random() * 11) + 1);
+        
+       if (randomNumberTeamTwo == 10){
+           numShotsTeamTwo++;
+           $("#teamtwo-numshots").html(numShotsTeamTwo);
+           numGoalsTeamTwo++;
+           $("#teamtwo-numhits").html(numGoalsTeamTwo);  
+           $("html").css("background-color", "blue");    
+       }else{
+           numShotsTeamTwo++;
+           $("#teamtwo-numshots").html(numShotsTeamTwo);
+       };
+   });
+})
+
+
+$("#reset").click(function(){
+	numreset = 0;
+    numShotsTwo = 0;
+    numShotsOne = 0;
+    numGoalsOne = 0;
+    numGoalsTwo = 0;
+    numreset++;
+    $("#teamtwo-numshots").html(numShotsTwo);
+    $("#teamtwo-numhits").html(numGoalsTwo);
+    $("#teamone-numhits").html(numGoalsOne);
+    $("#teamone-numshots").html(numShotsOne);
+    $("#num-resets").html(numreset);
+    $("html").css("background-color", "white");
+
+   });
